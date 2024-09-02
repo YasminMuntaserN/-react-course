@@ -302,6 +302,7 @@ test;
 
 
 //***** The Array sort Method ***********
+/*
 const sort =[1,7,5,4,9,3];
 const asncSorted = sort.sort((a, b) =>a-b); // ASNC way
 asncSorted;
@@ -316,3 +317,28 @@ books;
 
 const sortedByPages =books.slice().sort((a, b) =>b.pages - a.pages);  
 sortedByPages;
+*/
+
+
+//***** Working With Immutable Arrays ***********
+const books = getBooks();
+books;
+
+// add new book to array 
+const newBook ={
+  id: 6 ,
+  title :"my life ",
+  author:"yasmin"
+};
+const AfterAdd=[...books ,newBook];
+AfterAdd;
+books;// The orginal one does not change 
+
+// delete  book from array 
+const AfterDelete = AfterAdd.filter(book => book.id !==3);
+AfterDelete;
+AfterAdd;// The orginal one does not change
+
+// update  book from array 
+const AfterUpdate = AfterAdd.map(book => book.id ===3 ? {...book , pages:200}: book);
+AfterUpdate;

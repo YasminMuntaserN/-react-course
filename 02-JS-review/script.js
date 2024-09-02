@@ -199,7 +199,10 @@ updatedBook2;
 
 
 //*************** Template Literals ***************
-
+const book =getBook(2);
+const {title, author , pages , genres} = book ;
+const summary = `${title}, a ${pages}-page long book, was written by ${author} `;
+summary;
 
   //********* Ternaries Instead of ifelse Statements ********
 

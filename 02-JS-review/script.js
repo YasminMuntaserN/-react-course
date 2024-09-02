@@ -240,3 +240,23 @@ count;
 
 
 //***** Optional Chaining. ***********
+/*
+function getTotalReviewCount(book){
+return book.reviews.librarything?.reviewsCount ?? 0 + book.reviews.goodreads.reviewsCount;
+}
+
+const book =getBook(2);
+console.log(getTotalReviewCount(book));
+*/
+
+//***** The Array map Method ***********
+const books = getBooks();
+
+const titles =books.map(book =>book.title); 
+titles;
+
+const essentialData =books.map((book) => ({
+  title: book.title,
+  author: book.author,
+}));
+essentialData;

@@ -321,6 +321,7 @@ sortedByPages;
 
 
 //***** Working With Immutable Arrays ***********
+/*
 const books = getBooks();
 books;
 
@@ -342,3 +343,12 @@ AfterAdd;// The orginal one does not change
 // update  book from array 
 const AfterUpdate = AfterAdd.map(book => book.id ===3 ? {...book , pages:200}: book);
 AfterUpdate;
+*/
+
+
+//*****  Asynchronous JavaScript Promises ***********
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("jonas");

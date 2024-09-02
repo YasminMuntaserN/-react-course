@@ -144,19 +144,64 @@ function getBook(id) {
 }
 
 // *************** Destructuring ***************
-const book =getBook(2);
+/*
+      const book =getBook(2);
 
-// const title =book.title;  
-// const author =book.author;  
-// console.log(title,author);
+      // const title =book.title;  
+      // const author =book.author;  
+      // console.log(title,author);
 
-const {title, author , pages , genres} = book ;
-console.log(title,author,pages , genres);
+      const {title, author , pages , genres} = book ;
+      console.log(title,author,pages , genres);
 
-// const primaryGenre=genres[0];
-// const secounderyGenre=genres[1];
-// console.log(primaryGenre,secounderyGenre);
+      // const primaryGenre=genres[0];
+      // const secounderyGenre=genres[1];
+      // console.log(primaryGenre,secounderyGenre);
 
-const [primaryGenre , secounderyGenre] = genres ;
-console.log(primaryGenre,secounderyGenre);
+      const [primaryGenre , secounderyGenre] = genres ;
+      console.log(primaryGenre,secounderyGenre);
+*/
+
+
+
+ //*************** RestSpread Operator ***************
+/*
+  const book =getBook(2);
+  const {title, author , pages , genres} = book ;
+ // const [primaryGenre , secounderyGenre] = genres ;
+ // console.log(primaryGenre,secounderyGenre);
+
+  const [primaryGenre , secounderyGenre ,...otherGenres] = genres ;
+  console.log(primaryGenre,secounderyGenre ,otherGenres);
+ // if we but (...otherGenres) in the end of the destructuring operation.it will give us an error that the rest element must be the last in the Destructuring pattern
+ //const [primaryGenre ,...otherGenres, secounderyGenre] = genres ;
+
+ const updatedBook1 = {
+  pages: 1210, // it will does not effect
+  ...book,
+  // Adding a new property
+  moviePublicationDate: "2001-12-19",
+
+  // Overwriting an existing property
+};
+updatedBook1;
+
+  const updatedBook2 = {
+  ...book,
+  // Adding a new property
+  moviePublicationDate: "2001-12-19",
+
+  // Overwriting an existing property
+  pages: 1210,
+};
+updatedBook2;
+*/
+
+
+//*************** Template Literals ***************
+
+
+  //********* Ternaries Instead of ifelse Statements ********
+
+  
 

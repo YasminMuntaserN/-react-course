@@ -199,12 +199,19 @@ updatedBook2;
 
 
 //*************** Template Literals ***************
+/*
 const book =getBook(2);
 const {title, author , pages , genres} = book ;
 const summary = `${title}, a ${pages}-page long book, was written by ${author} `;
 summary;
+*/
+
 
   //********* Ternaries Instead of ifelse Statements ********
+/*
+  const book =getBook(1);
+const {title, author , pages , genres} = book ;
 
-  
-
+const pagesRange =pages >1000 ?"over a thousend":"less than 1000";
+pagesRange;
+*/

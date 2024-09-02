@@ -227,10 +227,16 @@ const getYear = (str) => str.split("-")[0];
 console.log( getYear(publicationDate));
 */
 
+
 //***** Short-Circuiting And Logical Operators &&, ***********
+/*
 const book =getBook(1 );
 const {title, author , pages , genres ,hasMovieAdaptation} = book ;
 console.log(hasMovieAdaptation && "This  book has a movie");
 
 const count = book.reviews.librarything.reviewsCount ||"No Data";
 count;
+*/
+
+
+//***** Optional Chaining. ***********

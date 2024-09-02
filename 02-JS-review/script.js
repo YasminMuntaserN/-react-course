@@ -249,7 +249,9 @@ const book =getBook(2);
 console.log(getTotalReviewCount(book));
 */
 
+
 //***** The Array map Method ***********
+/*
 const books = getBooks();
 
 const titles =books.map(book =>book.title); 
@@ -260,3 +262,21 @@ const essentialData =books.map((book) => ({
   author: book.author,
 }));
 essentialData;
+*/
+
+
+//***** The Array Filter Method ***********
+const books = getBooks();
+
+const longBooks = books.filter((book) =>book.pages >500);
+longBooks;
+
+const longBooksWithMovie = books.filter((book) =>book.pages >500).filter((book) => book.hasMovieAdaptation );
+longBooksWithMovie;
+
+const adventureBooks = books.filter((books) => books.genres.includes("adventure")
+);
+adventureBooks;
+
+const adventureBookTitles = books.filter((books) => books.genres.includes("adventure")).map((book) => book.title);  
+adventureBookTitles;

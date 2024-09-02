@@ -285,6 +285,7 @@ adventureBookTitles;
 
 
 //***** The reduce Method ***********
+/*
 const books = getBooks();
 books;
 
@@ -297,3 +298,21 @@ const test = books.reduce((acc, book) => {
 }, 0);
 
 test;
+*/
+
+
+//***** The Array sort Method ***********
+const sort =[1,7,5,4,9,3];
+const asncSorted = sort.sort((a, b) =>a-b); // ASNC way
+asncSorted;
+sort; // the orginal array changed 
+
+const descSorted = sort.sort((a, b) =>b-a); // ASNC way
+descSorted;
+
+
+const books = getBooks();
+books;
+
+const sortedByPages =books.slice().sort((a, b) =>b.pages - a.pages);  
+sortedByPages;

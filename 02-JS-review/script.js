@@ -266,6 +266,7 @@ essentialData;
 
 
 //***** The Array Filter Method ***********
+/*
 const books = getBooks();
 
 const longBooks = books.filter((book) =>book.pages >500);
@@ -280,3 +281,19 @@ adventureBooks;
 
 const adventureBookTitles = books.filter((books) => books.genres.includes("adventure")).map((book) => book.title);  
 adventureBookTitles;
+*/
+
+
+//***** The reduce Method ***********
+const books = getBooks();
+books;
+
+const pagesAllBooks =books.reduce((acc , book)=>acc+book.pages ,0);
+pagesAllBooks;
+
+const test = books.reduce((acc, book) => {
+  if (book.pages > 500) acc++;
+  return acc; // Explicitly return the accumulator
+}, 0);
+
+test;

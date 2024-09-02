@@ -215,3 +215,11 @@ const {title, author , pages , genres} = book ;
 const pagesRange =pages >1000 ?"over a thousend":"less than 1000";
 pagesRange;
 */
+
+//*************** Arrow Functions ***************
+const book =getBook(1);
+const {title, author , pages , genres ,publicationDate} = book ;
+
+const getYear = (str) => str.split("-")[0];
+
+console.log( getYear(publicationDate));

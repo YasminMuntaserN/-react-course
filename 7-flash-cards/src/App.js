@@ -44,18 +44,17 @@ const questions = [
 ];
 
 function Question({ question}) {
+  console.log(question);
   const [selectedId, setSelectedId] = useState(null); // Track selected question by ID
-  const [isSelected, setIsSelected] = useState(false); 
 
   return(  <div
       key={question.id}
       onClick={() => {
-        setSelectedId(question.id); // Set selected ID to the clicked question's ID
-        setIsSelected(!isSelected);
+        setSelectedId(selectedId !==question.id ?question.id :null); // Set selected ID to the clicked question's ID
       }}
-      className={selectedId === question.id && isSelected? "selected" : ""} // Apply 'selected' class only to the selected question
+      className={selectedId === question.id ? "selected" : ""} // Apply 'selected' class only to the selected question
     >
-      {isSelected ? question.answer:question.question}
+      {selectedId === question.id ? question.answer:question.question}
     </div>
   );
 }

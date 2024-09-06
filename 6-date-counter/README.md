@@ -1,3 +1,3 @@
 # 📅 Date Counter
 
-[small demo ](https://imgur.com/aAU9mjr.mp4)
+[![Watch the video]([https://i.imgur.com/abcd123](https://imgur.com/aAU9mjr).png)](https://imgur.com/aAU9mjr.mp4)

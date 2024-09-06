@@ -1,0 +1,26 @@
+p{
+  display: inline;
+  font-size: 22px;
+}
+.App{
+  display: flex;
+  justify-content: center;
+}
+button{
+  padding : 5px 20px;
+  margin :20px 20px;
+  font-size: 30px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  border: none;
+}
+
+.steps .add {
+  margin-left: 22px;
+}
+
+.dayesNum{
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-right: 100px;
+}

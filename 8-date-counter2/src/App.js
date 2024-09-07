@@ -12,17 +12,18 @@ function Counter(){
 
   return (
     <div>
-      <input type="range" min ="0" max="10" />
+
       <div className="steps">
-      <button className ="sub" onClick={()=>setStep(c => c-1)}> - </button>
-      <p> Step: {step}</p>
-      <button className ="add" onClick={()=>setStep(c => c+1)}> + </button>
+          <input type="range" min ="1" max="10" value={step}
+            onChange={(e)=>setStep(Number(e.target.value))} />
+          <p> Step: {step}</p>
       </div>
 
       <div className="counts">
-      <button className ="sub" onClick={()=>setcount(c => c-step)} > - </button>
-      <p> Count: {count}</p>
-      <button className ="add" onClick={()=>setcount(c => c+step)} > + </button>
+          <button className ="sub" onClick={()=>setcount(c => c-step)} > - </button>
+          <input type="text"  value={count}
+                onChange={(e)=>setcount(Number(e.target.value))} />
+          <button className ="add" onClick={()=>setcount(c => c+step)} > + </button>
       </div>
 
       <div>
@@ -32,6 +33,11 @@ function Counter(){
                `${count * -1} dayes ago was `}
               {newDate.toDateString() }
           </p>
+      </div>
+
+      <div>
+          <button className="reset"
+            onClick={()=>{setcount(c => 0); setStep(c=>0)} } > Reset</button>
       </div>
       </div>
   );

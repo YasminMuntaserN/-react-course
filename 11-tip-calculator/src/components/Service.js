@@ -1,8 +1,8 @@
-export function Service({children , onRateChange}){
+export function Service({children , onRateChange, rate}){
     return(
-      <div className="service">
+      <div className="service" >
         {children}
-        <select onChange={(e)=>onRateChange(e.target.value)}>
+        <select value={rate} onChange={(e)=>onRateChange(Number(e.target.value))}>
           <option value="0">Dissatisfied (0%)</option>
           <option value="5">It was Okey (5%)</option>
           <option value="10">It was good (10%)</option>

@@ -16,8 +16,7 @@ export default function App(){
 
 function Button ({ style, action , children}){
   return (
-    <button style={{style}} onClick={action}>children</button>
-      
+    <button style={style} onClick={action}>{children}</button>
   )
 }
 
@@ -47,7 +46,14 @@ function Steps() {
 
         <p className="message"> Step : {step} : {messages[step-1]}</p>
           <div className="buttons">
-          <Button style={{backgroundColor: "#7950f2" , color :"#fff"}} action={handleNext}>Next</Button>
+        
+          <Button style={{backgroundColor: "#7950f2" , color :"#fff"}} action={handlePrevious}>
+              <span>👈</span>previous
+          </Button>
+
+          <Button style={{backgroundColor: "#7950f2" , color :"#fff"}} action={handleNext}>
+            Next <span>👉</span>
+            </Button>
           </div>
     </div>
 )}

@@ -1,10 +1,5 @@
-export function Reset({onChangeBill ,onRate1Change,onRate2Change}){
+export function Reset({onReset}){
   return (
-    <button onClick={()=>{
-      onChangeBill(0)
-      onRate1Change(0)
-      onRate2Change(0)
-    }}
-    >Reset</button>
+    <button onClick={()=>onReset}>Reset</button>
   )
 }

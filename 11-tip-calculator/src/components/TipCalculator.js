@@ -9,6 +9,11 @@ export function TipCalculator() {
   const [rate1 , setRate1]=useState(0);
   const [rate2 , setRate2]=useState(0);
 
+  function handleReset(){
+    setBill(0);
+    setRate1(0);
+    setRate2(0);
+  }
   return (
     <div className="App">
         <Bill 
@@ -20,14 +25,17 @@ export function TipCalculator() {
         <Service rate={rate2} onRateChange={setRate2}>
           <p>How did Your frind like the service?</p>
         </Service>
+        { bill >0 &&(
+          <>
         <Result
           bill={Number(bill)}
           rate1={Number(rate1)}
           rate2={Number(rate2)}/>
+      
           <Reset
-          onChangeBill={setBill}
-          onRate1Change={setRate1}
-          onRate2Change={setRate2}/>
+          onReset={handleReset}/>
+          </>
+          )}
     </div>
   );
 }

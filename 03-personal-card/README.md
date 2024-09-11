@@ -1,5 +1,4 @@
 # 🗂 personal card 
 
 ## 🖼️ Screenshot
-
-![personal card](https://imgur.com/Uh0tUOF.gif)
+![personal card](https://imgur.com/ODyXuXM.jpg)

@@ -47,7 +47,7 @@ function TextExpander({
   const words = children.split(" ");
 
   // Determine the text to display
-  const textToShow = expanded
+  const textToShow = isExpanded
     ? words.join(" ")
     : words.slice(0, collapsedNumWords).join(" ");
   return (

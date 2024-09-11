@@ -2,4 +2,4 @@
 
 ## 🖼️ Screenshot
 
-![personal card](https://imgur.com/ODyXuXM.jpg)
+![personal card](https://imgur.com/Uh0tUOF.gif)

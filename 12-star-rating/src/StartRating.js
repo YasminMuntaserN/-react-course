@@ -36,9 +36,12 @@ export function StartRating({maxRating = 5}){
       (
         <Star
           key={i}
-          onRate={()=>handleRating(i+1)} 
           full={rating>= i+1}
           color="#fcc419"
+          onRate={()=>handleRating(i+1)} 
+          onHoverIn={()=>setTempRating(i+1)} 
+          onHoverout={()=>setTempRating(0)} 
+
         />
       )
       )}
@@ -48,7 +51,7 @@ export function StartRating({maxRating = 5}){
   );
 }
 
-function Star({ onRate, full, color }) {
+function Star({ onRate, full, color,onHoverIn, onHoverOut}) {
 
 
   return (
@@ -56,6 +59,9 @@ function Star({ onRate, full, color }) {
       role="button"
       style={starStyle}
       onClick={onRate}
+      onMouseEnter={()=>onHoverIn()}
+      onMouseLeave={()=>onHoverOut()}
+
     >
       {full ? (
         <svg

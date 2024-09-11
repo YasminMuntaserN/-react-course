@@ -3,28 +3,30 @@ import { useState } from "react";
 const containerStyle = {
   display: 'flex',
   alignItems: 'center',
-  gap:"16px"
+  gap:"16px",
+  marginTop:"30px"
 };
 
 const starcontainerStyle = {
   display: 'flex',
 }
 
-const textStyle = {
-  lineHeight :"1" ,
-  margin:0
-}
-
-const starStyle = {
-  width: `48px`,
-  height: `48px`,
-  display: "block",
-  cursor: "pointer",
-};
-
-export function StartRating({maxRating = 5}){
-  const [rating , setRating] =useState(0);
+export function StartRating({
+  maxRating = 5 ,
+  size=48,
+  color ="#fcc419" ,
+  messages=[] ,
+  defaultRating =0
+}){
+  const [rating , setRating] =useState(defaultRating);
   const [tempRating , setTempRating] =useState(0);
+
+  const textStyle = {
+    lineHeight :"1" ,
+    margin:0,
+    color,
+    fontSize:`${size / 1.5}px`
+  }
 
   function handleRating(rating){
     setRating(rating);  
@@ -36,8 +38,9 @@ export function StartRating({maxRating = 5}){
       (
         <Star
           key={i}
-          full={rating>= i+1}
-          color="#fcc419"
+          full={tempRating ? tempRating >= i+1 : rating >= i+1}
+          color={color}
+          size={size}
           onRate={()=>handleRating(i+1)} 
           onHoverIn={()=>setTempRating(i+1)} 
           onHoverout={()=>setTempRating(0)} 
@@ -46,21 +49,30 @@ export function StartRating({maxRating = 5}){
       )
       )}
     </div>
-    <p style={textStyle}>{rating || ""}</p>
+    <p style={textStyle}>{
+    messages.length === maxRating ? messages[tempRating ? tempRating-1 : rating-1 ]
+    :tempRating  || rating || ""}
+    </p>
         </div>
   );
 }
 
-function Star({ onRate, full, color,onHoverIn, onHoverOut}) {
+function Star({ onRate, full, size=48,color ="#fcc419",onHoverIn, onHoverOut}) {
 
+  const starStyle = {
+    width: `${size}px`,
+    height: `${size}px`,
+    display: "block",
+    cursor: "pointer",
+  };
 
   return (
     <span
       role="button"
       style={starStyle}
       onClick={onRate}
-      onMouseEnter={()=>onHoverIn()}
-      onMouseLeave={()=>onHoverOut()}
+      onMouseEnter={()=>onHoverIn}
+      onMouseLeave={()=>onHoverOut}
 
     >
       {full ? (

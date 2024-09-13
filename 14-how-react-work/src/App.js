@@ -65,11 +65,11 @@ function TabContent({ item }) {
   const [likes, setLikes] = useState(0);
 
   function handleInc() {
-    setLikes(likes + 1);
+    setLikes((likes)=>likes + 1);
   }
 
   function handleTripleInc() {
-    setLikes(likes + 3);
+    setLikes((likes)=>likes + 3);
   } 
 
   function handleUndo(){
@@ -113,3 +113,5 @@ function DifferentContent() {
     </div>
   );
 }
+
+
